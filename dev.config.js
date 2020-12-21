@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({ filename:'[name].[chunkhash].css' }),
-    new HtmlWebpackPlugin()
+    //new HtmlWebpackPlugin()
   ],
 
   module: {

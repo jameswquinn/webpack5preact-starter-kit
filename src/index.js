@@ -20,7 +20,7 @@ const NODE = document.body.querySelector("#root");
 const Home = () => (
   <Fragment>
     <Helmet
-      title="My Title Hay James Yet Another Page"
+      title="Changing My Title Hay James Yet Another Page"
       meta={[
         { name: "description", content: "Helmet application" },
         { property: "og:type", content: "article" }

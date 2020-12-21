@@ -63,7 +63,15 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename:'styles.[chunkhash].css' }),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyJS: true,
+        minifyCSS: true,
+      },
+    })
   ],
 
   module: {
