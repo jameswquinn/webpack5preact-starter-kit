@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Document</title>
   <meta charset="UTF-8">
@@ -12,12 +13,9 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#000">
   <script>
-    // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js', {
-          scope: '/',
-        });
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
       });
     }
   </script>

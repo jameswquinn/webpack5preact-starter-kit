@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+
 
 
 
@@ -59,12 +58,12 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[chunkhash].js'
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename:'styles.[chunkhash].css' }),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin({
       template: "public/index.html",
       minify: {
@@ -73,9 +72,6 @@ module.exports = {
         minifyJS: true,
         minifyCSS: true,
       },
-    }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static"
     })
   ],
 
