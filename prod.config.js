@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 
 
@@ -71,6 +73,9 @@ module.exports = {
         minifyJS: true,
         minifyCSS: true,
       },
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static"
     })
   ],
 
@@ -88,13 +93,13 @@ module.exports = {
         loader: "css-loader",
 
         options: {
-          sourceMap: true
+          sourceMap: false
         }
       }, {
         loader: "sass-loader",
 
         options: {
-          sourceMap: true
+          sourceMap: false
         }
       }]
     }]
